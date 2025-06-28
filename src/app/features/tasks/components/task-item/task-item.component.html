@@ -1,0 +1,52 @@
+<div class="card h-100" [class.border-success]="task().completed">
+    @if (!isEditing()) {
+    <div class="card-body d-flex flex-column">
+        <div class="d-flex align-items-center mb-2">
+            <h5 class="card-title flex-grow-1 mb-0" [class.text-decoration-line-through]="task().completed">
+                {{ task().title }}
+            </h5>
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="startEditing()"
+                    aria-label="Edit task">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-success" (click)="handleToggle()"
+                    aria-label="Toggle task completion">
+                    <i [class.fa]="task().completed" [class.fa-circle-check]="task().completed"
+                        [class.fa-regular]="!task().completed" [class.fa-circle]="!task().completed">
+                    </i>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-danger" (click)="handleDelete()"
+                    aria-label="Delete task">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+        </div>
+
+        @if (task().completed) {
+        <span class="badge bg-success text-white align-self-start">Completed</span>
+        }
+    </div>
+    } @else {
+    <div class="card-body">
+        <form [formGroup]="editForm" (ngSubmit)="saveChanges()">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" formControlName="title">
+                @if (editForm.get('title')?.invalid && editForm.get('title')?.touched) {
+                <div class="text-danger small mt-1">Title must be at least 3 characters</div>
+                }
+            </div>
+
+            <div class="d-flex justify-content-end gap-2">
+                <button type="button" class="btn btn-outline-secondary" (click)="cancelEditing()">
+                    Cancel
+                </button>
+                <button type="submit" [disabled]="editForm.invalid" class="btn btn-primary">
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+    }
+</div>

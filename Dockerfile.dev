@@ -1,0 +1,20 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copy package.json files first for better caching
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy the angular.json and other config files
+COPY angular.json tsconfig*.json ./
+
+# We'll mount the source code as a volume instead of copying
+# so that changes are reflected immediately
+
+EXPOSE 4200
+
+# Use proper command with explicit entry point for better container stability
+ENTRYPOINT ["npm", "run", "start", "--", "--host", "0.0.0.0", "--poll", "500", "--disable-host-check"]

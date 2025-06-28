@@ -12,6 +12,25 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## Docker Development Environment
+
+For a consistent development experience with all dependencies properly containerized, use Docker Compose:
+
+```bash
+# Start the containerized development environment
+docker compose up
+
+# Run in detached mode (background)
+docker compose up -d
+```
+This launches the application with full hot module reload support optimized for Angular's signal-based reactivity system. Access the application at http://localhost:4200/.
+
+Benefits of Docker Development
+Consistent environment across team members
+No need to install Node.js or Angular CLI locally
+Properly configured volume mounts for optimal change detection
+Preserves signal propagation performance across container boundaries
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
@@ -36,7 +55,7 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+## Running unit tests (not implemented in this To-Do app)
 
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
@@ -44,7 +63,7 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
-## Running end-to-end tests
+## Running end-to-end tests (not implemented in this To-Do app)
 
 For end-to-end (e2e) testing, run:
 

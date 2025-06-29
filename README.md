@@ -2,6 +2,8 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
 
+Simple To-Do app in Angular to add tasks to the list. No database integration, only local storage.
+
 ## Getting Started
 
 ### Clone the Repository
@@ -9,7 +11,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To get started with this project, clone it from GitHub:
 
 ```bash
-git clone https://github.com/yourusername/to-do-app.git
+git clone https://github.com/dipoz/to-do-app.git
 cd to-do-app
 ```
 Install Dependencies

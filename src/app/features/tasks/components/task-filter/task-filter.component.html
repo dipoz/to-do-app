@@ -1,0 +1,19 @@
+<div class="filter-controls mt-3">
+    <div class="btn-group w-100" role="group" aria-label="Task filters">
+        <button type="button" class="btn" [class.btn-primary]="activeFilter() === 'all'"
+            [class.btn-outline-primary]="activeFilter() !== 'all'" [attr.aria-pressed]="activeFilter() === 'all'"
+            (click)="setFilter('all')">
+            All
+        </button>
+        <button type="button" class="btn" [class.btn-primary]="activeFilter() === 'active'"
+            [class.btn-outline-primary]="activeFilter() !== 'active'" [attr.aria-pressed]="activeFilter() === 'active'"
+            (click)="setFilter('active')">
+            Active
+        </button>
+        <button type="button" class="btn" [class.btn-primary]="activeFilter() === 'completed'"
+            [class.btn-outline-primary]="activeFilter() !== 'completed'"
+            [attr.aria-pressed]="activeFilter() === 'completed'" (click)="setFilter('completed')">
+            Completed
+        </button>
+    </div>
+</div>

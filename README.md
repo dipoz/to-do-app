@@ -2,6 +2,33 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
 
+## Getting Started
+
+### Clone the Repository
+
+To get started with this project, clone it from GitHub:
+
+```bash
+git clone https://github.com/yourusername/to-do-app.git
+cd to-do-app
+```
+Install Dependencies
+This project uses npm for dependency management. Install all required packages with:
+
+```bash
+npm install
+```
+This will install Angular v20+ and all other dependencies defined in package.json, including the signal-based reactive libraries and standalone components.
+
+For developers who prefer to use a specific npm version or manage multiple projects, consider using nvm (Node Version Manager):
+
+```bash
+# Use the version specified in .nvmrc (if present)
+nvm use
+# Or specify a version explicitly
+nvm use 20.11.1
+```
+
 ## Development server
 
 To start a local development server, run:
